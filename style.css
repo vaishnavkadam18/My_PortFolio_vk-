@@ -413,14 +413,14 @@ a {
 
 .image-frame {
     width: 320px;
-    height: 380px;
+    height: 320px; /* Same width and height = perfect circle */
 
     padding: 8px;
-
     border: 1px solid #333;
+    border-radius: 50%;
+    overflow: hidden;
 
-    transform: rotate(-3deg);
-
+    transform: rotate(-2deg);
     transition: 0.5s;
 }
 
@@ -433,6 +433,7 @@ a {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 50%;
 }
 
 .about-text h3 {
@@ -468,45 +469,93 @@ a {
 }
 
 /* SKILLS */
+.skills-header {
+    margin-bottom: 24px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 
-.skills-grid {
+.skills-title {
+    font-family: 'Courier New', monospace;
+    letter-spacing: 4px;
+    font-size: 2rem;
+    color:#8b5cf6;
+    font-weight: 400;
+}
+
+.skills-tabs {
+    display: flex;
+    background: #c9bdd1;
+    border-radius: 14px;
+    padding: 6px;
+    max-width: 700px;
+    margin-bottom: 28px;
+    margin: 0 auto 28px auto;
+
+}
+
+.tab-btn {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 12px 20px;
+    font-family: 'Courier New', monospace;
+    font-size: 1.05rem;
+    color: #8a8a8a;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+}
+
+.tab-btn.active {
+    background: #952ee3;
+    color: #111;
+    font-weight: 700;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+.skills-panel {
+    display: none;
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+    gap: 16px;
+    max-width: 700px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.skills-panel.active {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 18px;
 }
 
 .skill-card {
-    padding: 30px;
-
-    border: 1px solid #222;
-
-    background: rgba(255,255,255,0.02);
-
-    border-radius: 15px;
-
-    transition: 0.4s;
-}
-
-.skill-card:hover {
-    transform: translateY(-10px) rotateX(5deg);
-    border-color: #8b5cf6;
-    background: rgba(139,92,246,0.05);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #9e94ee;
+    border-radius: 14px;
+    padding: 16px 20px;
+    text-align: left;
 }
 
 .skill-icon {
-    font-size: 35px;
-    margin-bottom: 20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    flex-shrink: 0;
 }
 
-.skill-card h3 {
-    margin-bottom: 8px;
+.skill-card span {
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #1a1a1a;
 }
-
-.skill-card p {
-    color: #777;
-    font-size: 14px;
-}
-
 /* PROJECTS */
 
 .projects-grid {
