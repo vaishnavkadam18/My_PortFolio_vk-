@@ -384,17 +384,17 @@ contactForm.addEventListener("submit", function (e) {
     const message = document.getElementById("message").value;
 
     
-    const phoneNumber = "9607219194";
+    const phoneNumber = "919607219194";
 
     const whatsappMessage =
-        `Hello Vaishnav! 👋%0A%0A` +
-        `Name: ${name}%0A` +
-        `Email: ${email}%0A%0A` +
-        `Message:%0A${message}`;
+    `Hello Vaishnav! 👋%0A%0A` +
+    `Name: ${name}%0A` +
+    `Email: ${email}%0A%0A` +
+    `Message:%0A${message}`;
 
-    const whatsappURL = `https://wa.me/9607219194?text=${whatsappMessage}`;
-    window.open(whatsappURL, "_blank");
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
 
+window.open(whatsappURL, "_blank");
     contactForm.reset();
 
 });

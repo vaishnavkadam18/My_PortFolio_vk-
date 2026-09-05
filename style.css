@@ -474,14 +474,22 @@ a {
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
+.section-number {
+    font-size: 18px;
+    font-weight: 600;
+    color: #8b5cf6;
+}
 .skills-title {
     font-family: 'Courier New', monospace;
     letter-spacing: 4px;
     font-size: 2rem;
     color:#8b5cf6;
     font-weight: 400;
+    margin: 0;
 }
 
 .skills-tabs {
@@ -1112,7 +1120,101 @@ footer {
 }
 
 /* =====================================
-   MOBILE RESPONSIVE DESIGN
+   RESPONSIVE DESIGN
+===================================== */
+
+/* TABLET */
+@media (max-width: 900px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .navbar nav {
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+
+        display: none;
+        flex-direction: column;
+
+        padding: 25px;
+
+        background: #090909;
+        border-bottom: 1px solid #222;
+    }
+
+    .navbar nav.active {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .resume-btn {
+        display: none;
+    }
+
+    /* HERO */
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 140px 5% 60px;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        margin-top: 60px;
+    }
+
+    /* ABOUT */
+
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .about-image {
+        display: flex;
+        justify-content: center;
+    }
+
+    /* PROJECTS */
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* CONTACT */
+
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+}
+
+
+/* =====================================
+   MOBILE
 ===================================== */
 
 @media (max-width: 768px) {
@@ -1120,6 +1222,7 @@ footer {
     body {
         overflow-x: hidden;
     }
+
 
     /* NAVBAR */
 
@@ -1135,10 +1238,7 @@ footer {
     .navbar nav {
         top: 65px;
         padding: 20px;
-
         gap: 20px;
-
-        border-bottom: 1px solid #222;
     }
 
     .navbar nav a {
@@ -1151,48 +1251,27 @@ footer {
 
     .hero {
         min-height: auto;
-
-        padding: 120px 20px 60px;
-
+        padding: 110px 20px 60px;
         flex-direction: column;
-
         text-align: center;
-    }
-
-    .hero-content {
-        width: 100%;
-    }
-
-    .status {
-        font-size: 11px;
-    }
-
-    .small-title {
-        font-size: 12px;
     }
 
     .hero h1 {
         font-size: clamp(50px, 15vw, 75px);
-
         letter-spacing: -3px;
-
         line-height: 1;
     }
 
     .hero h2 {
         font-size: 20px;
-
         margin-top: 20px;
     }
 
     .hero-description {
         font-size: 14px;
-
         line-height: 1.7;
-
         margin: 20px auto;
-
-        max-width: 95%;
+        max-width: 100%;
     }
 
 
@@ -1200,15 +1279,12 @@ footer {
 
     .hero-buttons {
         width: 100%;
-
         flex-direction: column;
-
         gap: 12px;
     }
 
     .hero-buttons a {
         width: 100%;
-
         text-align: center;
     }
 
@@ -1217,29 +1293,23 @@ footer {
 
     .social-links {
         justify-content: center;
-
         flex-wrap: wrap;
-
         gap: 18px;
-
         margin-top: 25px;
     }
 
-    .social-icon {
-        font-size: 14px;
-    }
 
-
-    /* HERO 3D */
+    /* HERO VISUAL */
 
     .hero-visual {
         width: 100%;
-
+        max-width: 450px;
         height: 350px;
 
         margin-top: 30px;
 
         transform: scale(0.7);
+        transform-origin: center;
     }
 
 
@@ -1247,11 +1317,12 @@ footer {
 
     .section {
         padding: 80px 20px;
+        width: 100%;
+        overflow: hidden;
     }
 
     .section-title {
         margin-bottom: 45px;
-
         gap: 12px;
     }
 
@@ -1264,20 +1335,16 @@ footer {
 
     .about-container {
         grid-template-columns: 1fr;
-
         gap: 45px;
-    }
-
-    .about-image {
-        display: flex;
-
-        justify-content: center;
     }
 
     .image-frame {
         width: 250px;
+        height: 250px;
+    }
 
-        height: 300px;
+    .about-text {
+        text-align: center;
     }
 
     .about-text h3 {
@@ -1293,12 +1360,8 @@ footer {
 
     .stats {
         display: grid;
-
-        grid-template-columns:
-            repeat(3, 1fr);
-
+        grid-template-columns: repeat(3, 1fr);
         gap: 10px;
-
         text-align: center;
     }
 
@@ -1311,31 +1374,71 @@ footer {
     }
 
 
-    /* SKILLS */
+    /* =====================================
+       SKILLS - IMPORTANT FIX
+    ===================================== */
 
-    .skills-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
-
+    .skills-header {
+        justify-content: flex-start;
+        align-items: center;
         gap: 12px;
+    }
+    .section-number{
+        font-size: 16px;
+    }
+    .skills-title {
+        font-size: 1.7rem;
+        letter-spacing: 3px;
+    }
+
+    .skills-tabs {
+        width: 100%;
+        max-width: 100%;
+        padding: 5px;
+        border-radius: 14px;
+        margin-bottom: 25px;
+    }
+
+    .tab-btn {
+        min-width: 0;
+        padding: 12px 8px;
+        font-size: 0.9rem;
+    }
+
+    .skills-panel {
+        width: 100%;
+        max-width: 100%;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 14px;
+        margin: 0;
     }
 
     .skill-card {
-        padding: 20px;
+        width: 100%;
+        min-width: 0;
 
-        min-height: 150px;
+        padding: 18px 14px;
+
+        gap: 12px;
+
+        min-height: 120px;
+
+        overflow: hidden;
+    }
+
+    .skill-card span {
+        font-size: 0.9rem;
+
+        overflow-wrap: anywhere;
     }
 
     .skill-icon {
-        font-size: 28px;
-    }
+        width: 42px;
+        height: 42px;
 
-    .skill-card h3 {
-        font-size: 16px;
-    }
-
-    .skill-card p {
-        font-size: 12px;
+        flex-shrink: 0;
     }
 
 
@@ -1343,13 +1446,11 @@ footer {
 
     .projects-grid {
         grid-template-columns: 1fr;
-
         gap: 20px;
     }
 
     .project-card {
         min-height: 360px;
-
         padding: 25px;
     }
 
@@ -1377,7 +1478,6 @@ footer {
 
     .contact-container {
         grid-template-columns: 1fr;
-
         gap: 45px;
     }
 
@@ -1391,23 +1491,19 @@ footer {
 
     .ai-chat {
         left: 10px;
-
         right: 10px;
 
         bottom: 85px;
 
         width: auto;
-
         height: 430px;
     }
 
     .ai-button {
         width: 55px;
-
         height: 55px;
 
         right: 20px;
-
         bottom: 20px;
     }
 
@@ -1429,6 +1525,53 @@ footer {
 
 
 /* =====================================
+   SMALL PHONES
+===================================== */
+
+@media (max-width: 500px) {
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+    .hero h2 {
+        font-size: 19px;
+    }
+
+    .section-title h2 {
+        font-size: 32px;
+    }
+
+
+    /* Skills one column on small phones */
+
+    .skills-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-card {
+        min-height: auto;
+        padding: 18px;
+    }
+
+
+    .stats {
+        gap: 8px;
+    }
+
+    .stats strong {
+        font-size: 23px;
+    }
+
+
+    .hero-visual {
+        transform: scale(0.6);
+        margin-top: 0;
+    }
+}
+
+
+/* =====================================
    VERY SMALL PHONES
 ===================================== */
 
@@ -1442,26 +1585,17 @@ footer {
         font-size: 18px;
     }
 
-    .section-title h2 {
-        font-size: 30px;
+    .skills-title {
+        font-size: 1.4rem;
+        letter-spacing: 2px;
     }
 
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .stats strong {
-        font-size: 22px;
-    }
-
-    .hero-visual {
-        transform: scale(0.55);
-
-        margin-top: 0;
+    .tab-btn {
+        font-size: 0.8rem;
+        padding: 10px 5px;
     }
 
     .social-links {
         gap: 14px;
     }
-
 }
